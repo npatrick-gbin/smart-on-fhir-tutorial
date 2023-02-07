@@ -56,7 +56,8 @@
 		  for(var i=0; i<allergyLen; i++){
 			var reactionStr = [];
 			if(allergy[i].reaction !== undefined){
-				for(var j=0; jLen=allergy[i].reaction.length; j<jLen; j++){
+				var jLen = allergy[i].reaction.length
+				for(var j=0; j<jLen; j++){
 					reactionStr.push(allergy[i].reaction[j].manifestation[0].text);
 				}
 			}
@@ -65,7 +66,7 @@
 		  if(allergyLen === 0){
 		  	allergyTable += "<tr><td>No Allergies Found</td></tr>";
 		  }
-		  allergyTable += "</table>"
+		  allergyTable += "</table>";
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
