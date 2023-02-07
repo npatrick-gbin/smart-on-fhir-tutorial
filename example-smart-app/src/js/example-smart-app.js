@@ -51,7 +51,7 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 
-		  var allergyTable = "<table>";
+		  var allergyTable = "<table><tr><td><b>Allergy:</b></td><td><b>Reaction:</b></td></tr>";
 		  var allergyLen = allergy.length;
 		  for(var i=0; i<allergyLen; i++){
 			var reactionStr = [];
