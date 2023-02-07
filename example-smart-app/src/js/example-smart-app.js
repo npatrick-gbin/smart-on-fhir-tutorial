@@ -23,6 +23,9 @@
 
 		var alg = smart.patient.api.fetchAll({
 			type: 'AllergyIntolerance'
+			query: {
+				"clinical-status": 'active'
+			}
 		})
 
         $.when(pt, obv, alg).fail(onError);
@@ -48,6 +51,8 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 
+          //var alrgy	= //New
+
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
           p.gender = gender;
@@ -65,6 +70,8 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
+
+          //p.alrgy = alrgy	//New
 
           ret.resolve(p);
         });
