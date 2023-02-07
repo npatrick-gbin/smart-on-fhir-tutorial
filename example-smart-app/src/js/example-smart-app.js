@@ -54,7 +54,13 @@
 		  var allergyTable = "<table>";
 		  var allergyLen = allergy.length;
 		  for(var i=0; i<allergyLen; i++){
-		  	allergyTable += "<tr><td>"+allergy[i].code.text+"</td></tr>";
+			var reactionStr = [];
+			if(allergy[i].reaction !== undefined){
+				for(var j=0; jLen=allergy[i].reaction.length; j<jLen; j++){
+					reactionStr.push(allergy[i].reaction[j].manifestation[0].text);
+				}
+			}
+		  	allergyTable += "<tr><td>"+allergy[i].code.text+"</td><td>"+reactionStr.join(", ")+"</td></tr>";
 		  }
 		  if(allergyLen === 0){
 		  	allergyTable += "<tr><td>No Allergies Found</td></tr>";
