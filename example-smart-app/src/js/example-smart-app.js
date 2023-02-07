@@ -51,7 +51,17 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 
-          //var alrgy	= //New
+		  var allergyTable = "<table>"
+		  var allergyLen = allergy.length;
+		  for(var i=0; i<allergyLen; i++){
+		  	allergyTable += "<tr><td>"+allergy[i].code.text+"</td></tr>";
+		  }
+		  if(allergyLen == 0){
+		  	allergyTable += "<tr><td>No Allergies Found</td></tr>";
+		  }
+		  allergyTable += "</table>"
+
+		  p.alg = allergyTable
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -70,8 +80,6 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
-
-          p.alg = "TEST"	//New
 
           ret.resolve(p);
         });
