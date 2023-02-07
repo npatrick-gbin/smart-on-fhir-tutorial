@@ -71,7 +71,7 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-          //p.alrgy = alrgy	//New
+          p.alg = "TEST"	//New
 
           ret.resolve(p);
         });
@@ -96,6 +96,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      alg: {value: ''},
     };
   }
 
@@ -139,6 +140,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#alg').html(p.alg);
   };
 
 })(window);
