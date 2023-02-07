@@ -56,12 +56,10 @@
 		  for(var i=0; i<allergyLen; i++){
 		  	allergyTable += "<tr><td>"+allergy[i].code.text+"</td></tr>";
 		  }
-		  if(allergyLen == 0){
+		  if(allergyLen === 0){
 		  	allergyTable += "<tr><td>No Allergies Found</td></tr>";
 		  }
 		  allergyTable += "</table>"
-
-		  p.alg = allergyTable;
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -80,6 +78,8 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
+
+          p.alg = allergyTable;
 
           ret.resolve(p);
         });
