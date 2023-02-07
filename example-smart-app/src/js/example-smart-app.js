@@ -61,7 +61,7 @@
 		  }
 		  allergyTable += "</table>"
 
-		  p.alg = allergyTable
+		  p.alg = allergyTable;
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
